@@ -36,7 +36,7 @@ include('connect.php');
                                         <div class="row clearfix">
                                             <div class="col-md-12">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         FirstName:
@@ -46,7 +46,7 @@ include('connect.php');
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         LastName:
@@ -56,7 +56,7 @@ include('connect.php');
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         Email:
@@ -66,20 +66,11 @@ include('connect.php');
                                                     </div>
                                                 </div>
                                             </div>
+                                           
                                             <div class="col-md-2">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
-                                                        Salary:
-                                                    </span>
-                                                    <div class="form-line">
-                                                        <input type="int" class="form-control" name="per_salary"required>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">
-                                                        Hire Date:
+                                                         Date:
                                                     </span>
                                                     <div class="form-line">
                                                         <input type="date" class="form-control" name="per_hire_data" placeholder=""required>
@@ -96,7 +87,7 @@ include('connect.php');
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         Job:
@@ -118,6 +109,16 @@ include('connect.php');
                                                             <option value="<?php echo $row1['job_id']; ?>"><?php echo $row1['job_name'] . '(' . $row1['job_code'] . ')'; ?></option>
                                                         <?php } ?>
                                                     </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        Salary:
+                                                    </span>
+                                                    <div class="form-line">
+                                                        <input type="int" class="form-control" name="per_salary"required>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -143,7 +144,7 @@ include('connect.php');
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <div class="input-group">
                                                     <span class="input-group-addon">
                                                         Department:
