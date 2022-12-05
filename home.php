@@ -27,7 +27,7 @@ include('connect.php');
                         <div class="card">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <h4>PERSONNEL INFORMATION</h4>
+                                    <h4>EMPLOYEE INFORMATION</h4>
                                 </div>
                             </div>
                             <div class="body">
