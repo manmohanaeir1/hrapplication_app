@@ -1,6 +1,11 @@
-<?php 
-include("header.php");
+<?php
+session_start();
+
+include("header1.php");
 ?>
+<div class="logout-button" style="float: right;">
+    <a href="logout.php" class="btn btn-danger ">Logout</a>
+</div>
  <section class="content">
 
         <div class="container-fluid">
@@ -11,7 +16,6 @@ include("header.php");
                         <div class = "panel panel-primary">
                             <div class = "panel-heading">
                                 <h4>JOBS </h4>
-                                <?php include("add_job_modal.php"); ?>
                             </div>
                         </div>
                         <div id="print">
@@ -24,7 +28,6 @@ include("header.php");
                                         <td>JOB Name</td>
                                         <td>Minimum Salary</td>
                                         <td>Maximum Salary</td>
-                                        <td width = "200px">Action</td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,9 +45,7 @@ include("header.php");
                                         <td><?php echo $row['min_salary']; ?></td>
                                         <td><?php echo $row['max_salary']; ?></td>
 
-                                        <td>
-                                            <?php include("edit_job.php") ?>
-                                        </td>
+                                        
                                     </tr>                                     
                                      <?php 
                                      }?>

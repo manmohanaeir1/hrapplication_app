@@ -52,12 +52,17 @@
                         </a>
                     </li>
 
-                    <li>
+                     <li>
                         <a href="all_hr_application.php">
                             <i class="glyphicon glyphicon-plus"></i> &nbsp;&nbsp;
                             Employee Menu </a>
                     </li>
+                    <li>
+                        <a href="job_table.php">
+                            <i class="glyphicon glyphicon-plus"></i> &nbsp;&nbsp;
+                            Job Menu </a>
                     </li>
+                </ul>
 
 
             </div>
