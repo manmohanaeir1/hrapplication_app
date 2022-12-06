@@ -3,7 +3,10 @@ session_start();
 
 include("header1.php");
 ?>
-<div class="logout-button" style="float: right;">
+
+<?php
+if (isset($_SESSION['name'])) { ?>
+    <div class="logout-button" style="float: right;">
     <a href="logout.php" class="btn btn-danger ">Logout</a>
 </div>
 <section class="content">
@@ -90,6 +93,11 @@ include("header1.php");
         </div>
     </div>
 </section>
+	<?php } else {
+
+		header('location:login.php');
+	}
+?>
 
 
 <script src="plugins/js/jquery-1.js"></script>
