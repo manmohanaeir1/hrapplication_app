@@ -23,8 +23,7 @@ if(isset($_POST['save'])) {
 		$dept_id = $_POST['dept_id'];
 		$manager_id = $_POST['mgr_id'];
 
-		$user_name = $_SESSION['name();
-		'];
+		$user_name = $_SESSION['name'];
 
 		$add_personnel = $con->prepare("INSERT INTO hr_employees(per_firstname, per_lastname, per_email,per_salary, per_hire_data, per_phone, job_id, dept_id, mgr_id, user_name) 
 		VALUES(?,?,?,?,?,?,?,?,?,?)");

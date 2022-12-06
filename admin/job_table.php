@@ -1,5 +1,8 @@
-<?php 
-include("header.php");
+<?php  
+session_start();
+
+if (isset($_SESSION['admin_user'])) {  
+    include("header.php");
 ?>
  <section class="content">
 
@@ -57,7 +60,11 @@ include("header.php");
          </div>
     </div>
 </section>
-
+<?php
+} else {
+    header('location:logout.php');
+}
+?>
    
 <script src="plugins/js/jquery-1.js"></script>
 <script src="plugins/js/jquery.dataTables.min.js"></script>

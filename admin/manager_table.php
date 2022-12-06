@@ -1,5 +1,7 @@
-<?php 
-include("header.php");
+<?php
+session_start();
+if (isset($_SESSION['admin_user'])) {  
+    include("header.php");
 ?>
  <section class="content">
 
@@ -56,22 +58,13 @@ include("header.php");
          </div>
     </div>
 </section>
+<?php
+} else {
+    header('location:logout.php');
+}
+?>
 
-   <script>
-    function printDiv() {
-        //Get the HTML of div
-        var divElements = document.getElementById("print").innerHTML;
-        //Get the HTML of whole page
-        var oldPage = document.body.innerHTML;
-        //Reset the page's HTML with div's HTML only
-        document.body.innerHTML = "<table></table>" + divElements;
-        //Print Page
-        window.print();
-        //Restore orignal HTML
-        document.body.innerHTML = oldPage;
-
-    }
-    </script>
+    
 <script src="plugins/js/jquery-1.js"></script>
 <script src="plugins/js/jquery.dataTables.min.js"></script>
     <script>

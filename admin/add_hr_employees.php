@@ -1,4 +1,9 @@
-<?php include("header.php") ?>
+
+<?php
+session_start();
+if (isset($_SESSION['admin_user'])) {  
+    include("header.php");
+?>
 
     <link href="css/style2.css" rel="stylesheet">
     <section class="content">
@@ -159,34 +164,16 @@
             <!-- #END# Input Group -->           
         </div>
     </section>
+    <?php
+} else {
+    header('location:logout.php');
+}
+?>
+
 <script src="plugins/js/formatter.js"></script>
 <script src="js/jquery.min.js"></script>
   <?php include("script.php"); ?>
     
-    
-<script type="">
-    $(function(){
-  
-  $("select.main").on("change", function(){
-    //remove active
-    $("select.models.active").removeClass("active");
-    //check if select vlass exists..if it does show it
-    var subList = $("select.models."+$(this).val());
-    if (subList.length){
-      //it does! show it by adding active class to it
-      subList.addClass("active");
-    }
-  });
-  
-});
-</script>
-<script type="">
-    var Privileges = jQuery('#privileges');
-    var select = this.value;
-    Privileges.change(function () {
-        if ($(this).val() == '') {
-            $('.resources').show();
-        }
-        else $('.resources').hide();
-    });
-</script>
+</body>
+</html>
+

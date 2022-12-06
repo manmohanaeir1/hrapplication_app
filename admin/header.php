@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+     include("connect.php")
+
+     ?>
 <!DOCTYPE html>
 <html>
 
@@ -29,11 +35,12 @@
     </style>
 </head>
 <body class="theme-red">
+     
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
     <!-- Top Bar -->
-    <nav class="navbar">
+    <nav class="navbar ">
         <div class="container-fluid" style="background-color:blue;">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
@@ -44,7 +51,8 @@
                     <a class = "user dropdown-toggle" data-toggle = "dropdown" href = "#" style="color: #fff;">
                         <span class = "glyphicon glyphicon-user" style="color: #fff;"></span>
                         <b class = "caret"></b>
-                    </a>
+                    </a>                    <?php echo $_SESSION['admin_user']; ?>
+
                 <ul class = "dropdown-menu">
                     <li>
                         <a class = "me" href = "logout.php" onclick="if(confirm('Logging out, Thank you and see you soon Admin!') == 0){return false;}"><i class = "glyphicon glyphicon-log-out"></i> Logout</a>
@@ -58,7 +66,7 @@
     <!-- #Top Bar -->
     <section>
         <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
+        <aside id="leftsidebar" class="sidebar ">
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
