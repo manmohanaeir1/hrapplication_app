@@ -59,7 +59,12 @@ include("header1.php");
     </div>
 </section>
 
-   
+<div class="container">
+        <div class="footer">
+            <h4 style="text-align: center;  ">Saurav Bhatt - 301227876 COMP214 2022
+            </h4>
+        </div>
+    </div>
 <script src="plugins/js/jquery-1.js"></script>
 <script src="plugins/js/jquery.dataTables.min.js"></script>
     <script>

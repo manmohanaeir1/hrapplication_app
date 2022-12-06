@@ -67,9 +67,12 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id']))
 		</div>
 	</div>
 	</div>
-	<div id="footer">
-		<label class="footer-title">&copy; HR Application webbase application</label>
-	</div>
+	<div class="container">
+        <div class="footer">
+            <h4 style="text-align: center;  ">Saurav Bhatt - 301227876 COMP214 2022
+            </h4>
+        </div>
+    </div>
 </body>
 <?php
 include("script.php");

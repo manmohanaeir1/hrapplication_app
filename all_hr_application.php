@@ -66,7 +66,7 @@ if (isset($_SESSION['user_name'])) { ?>
                                         ?>
                                             <tr>
                                                 <td class="hidden"><?php echo $row['per_id']; ?></td>
-                                                <td><?php echo $row['per_lastname'] . ", " . $row['per_firstname']; ?></td>
+                                                <td><?php echo $row['per_firstname'] . ", " . $row['per_lastname']; ?></td>
                                                 <td><?php echo $row['per_email']; ?></td>
                                                 <td><?php echo $row['per_salary']; ?></td>
                                                 <td><?php echo $row['per_hire_data']; ?></td>
@@ -93,6 +93,12 @@ if (isset($_SESSION['user_name'])) { ?>
         </div>
     </div>
 </section>
+<div class="container">
+        <div class="footer">
+            <h4 style="text-align: center;  ">Saurav Bhatt - 301227876 COMP214 2022
+            </h4>
+        </div>
+    </div>
 	<?php } else {
 
 		header('location:login.php');

@@ -81,6 +81,12 @@ if (isset($_SESSION['admin_user'])) {
          </div>
     </div>
 </section>
+<div class="container">
+        <div class="footer">
+            <h4 style="text-align: center;  ">Saurav Bhatt - 301227876 COMP214 2022
+            </h4>
+        </div>
+    </div>
 <?php
 } else {
     header('location:logout.php');
