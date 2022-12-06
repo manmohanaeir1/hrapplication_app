@@ -5,7 +5,7 @@ include("header1.php");
 ?>
 
 <?php
-if (isset($_SESSION['name'])) { ?>
+if (isset($_SESSION['user_name'])) { ?>
     <div class="logout-button" style="float: right;">
     <a href="logout.php" class="btn btn-danger ">Logout</a>
 </div>
@@ -49,7 +49,7 @@ if (isset($_SESSION['name'])) { ?>
 
                                         <?php
                                         include('connect.php');
-                                        $username = $_SESSION['name'];
+                                        $username = $_SESSION['user_name'];
 
                                         $display = $con->prepare("SELECT * FROM `hr_employees` 
                                     LEFT JOIN hr_jobs ON hr_employees.job_id = hr_jobs.job_id 

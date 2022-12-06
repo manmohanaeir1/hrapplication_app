@@ -9,7 +9,7 @@ require("header1.php");
 
 
 <?php
-if(isset($_SESSION['name'])){ ?>
+if(isset($_SESSION['user_name'])){ ?>
 <?php
 include('connect.php');
 
@@ -18,13 +18,13 @@ require("header1.php");
 ?>
 
     <div class="welcome">
-    <h2 align="center">Welcome to the home page <?php echo $_SESSION['name']; ?></h2>
+    <h2 align="center">Welcome to the home page <?php echo $_SESSION['user_name']; ?></h2>
 </div>
 
 
 <div class="logout-button" style="float: right;">
 <?php 
-if(isset($_SESSION['name'])){
+if(isset($_SESSION['user_name'])){
 ?>
     <a href="logout.php" class="btn btn-danger ">Logout</a>
 
@@ -132,6 +132,7 @@ if(isset($_SESSION['name'])){
                                                     </span>
                                                     <div class="form-line">
                                                         <input type="int" class="form-control" name="per_salary"required>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
