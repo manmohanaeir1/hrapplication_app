@@ -1,21 +1,35 @@
 <?php
 session_start();
+include('connect.php');
+
 require("header1.php");
 
-include('connect.php');
 ?>
 
 
-<div class="logout-button" style="float: right;">
-    <a href="logout.php" class="btn btn-danger ">Logout</a>
-</div>
-<div class="welcome">
-    <h1 align="center"><?php echo $_SESSION['success']; ?></h1>
+
+<?php
+if(isset($_SESSION['name'])){ ?>
+<?php
+include('connect.php');
+
+require("header1.php");
+
+?>
+
+    <div class="welcome">
     <h2 align="center">Welcome to the home page <?php echo $_SESSION['name']; ?></h2>
-
 </div>
 
 
+<div class="logout-button" style="float: right;">
+<?php 
+if(isset($_SESSION['name'])){
+?>
+    <a href="logout.php" class="btn btn-danger ">Logout</a>
+
+<?php } ?> 
+</div>
 <div class="form">
     <link href="style2.css" rel="stylesheet">
     <section class="content">
@@ -178,6 +192,15 @@ include('connect.php');
         <!-- #END# Input Group -->
 </div>
 </section>
+
+<?php } 
+else
+header('location:login.php');
+?>
+
+
+
+
 
 
 </div>
