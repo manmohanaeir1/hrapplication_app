@@ -30,7 +30,7 @@ if(isset($_POST['save'])) {
 	$update->execute(array($per_firstname, $per_lastname,$per_email,$per_salary, $per_phone, $job_id, $dept_id, $mgr_id,$user_name,$per_id ));
 	header('location:all_hr_application.php');
 }	else
-	{ ?>
+	{  ?>
 		<h1 style="color: red;">Salary is not in range </h1>
 		<h3>Salary Range OF  <?php echo $job_name . "Between " . $row['min_salary'] ."-". $row['max_salary']; ?>     </h3>
 	<?php } } ?>

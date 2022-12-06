@@ -5,13 +5,10 @@ require("header1.php");
 include('connect.php');
 
 include('connect.php');
-$username = $_SESSION['name'];
-
 $display = $con->prepare("SELECT * FROM `hr_employees` 
 LEFT JOIN hr_jobs ON hr_employees.job_id = hr_jobs.job_id 
 LEFT JOIN hr_manager ON hr_employees.mgr_id = hr_manager.mgr_id  
-LEFT JOIN hr_departments ON hr_employees.dept_id = hr_departments.dept_id WHERE user_name ='$username'; 
-ORDER BY per_id ASC");
+LEFT JOIN hr_departments ON hr_employees.dept_id = hr_departments.dept_id WHERE per_id='{$_GET['per_id']}'");
 
 $display->execute();
 
