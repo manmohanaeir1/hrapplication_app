@@ -33,7 +33,8 @@ foreach ($fetch as $key => $row) {
 }                                   
 ?>
 
-
+<?php
+if (isset($_SESSION['user_name'])) { ?>
 <div class="logout-button" style="float: right;">
     <a href="logout.php" class="btn btn-danger ">Logout</a>
 </div>
@@ -189,7 +190,7 @@ foreach ($fetch as $key => $row) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="submit" name="save" value="SAVE" class="btn btn-success" style="float:right; margin-top: -30px;">
+                                        <input type="submit" name="save" value="UPDATE" class="btn btn-success" style="float:right; margin-top: -30px;">
                                     </div>
                                 </div>
                             </div>
@@ -206,3 +207,8 @@ foreach ($fetch as $key => $row) {
 
 
 </div>
+<?php } else {
+
+header('location:login.php');
+}
+?>

@@ -33,7 +33,7 @@ if (isset($_SESSION['admin_user'])) {
                                         <td>Job</td>
                                         <td>Manager</td>
                                         <td>Department</td>
-                                        <td>Action</td>
+                                        <td>Status</td>
                                     </tr>
                                 </thead>
                                 <tbody>

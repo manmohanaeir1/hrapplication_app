@@ -18,7 +18,7 @@ if (isset($_SESSION['user_name'])) { ?>
     ?>
 
     <div class="welcome">
-        <h2 align="center">Welcome to the home page <?php echo $_SESSION['user_name']; ?></h2>
+        <h2 align="center">Welcome to the home page : <?php echo  $_SESSION['user_name']; ?></h2>
     </div>
 
 

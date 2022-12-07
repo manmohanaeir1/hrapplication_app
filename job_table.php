@@ -3,6 +3,8 @@ session_start();
 
 include("header1.php");
 ?>
+<?php
+if (isset($_SESSION['user_name'])) { ?>
 <div class="logout-button" style="float: right;">
     <a href="logout.php" class="btn btn-danger ">Logout</a>
 </div>
@@ -65,6 +67,12 @@ include("header1.php");
             </h4>
         </div>
     </div>
+    <?php } else {
+
+header('location:login.php');
+}
+?>
+
 <script src="plugins/js/jquery-1.js"></script>
 <script src="plugins/js/jquery.dataTables.min.js"></script>
     <script>

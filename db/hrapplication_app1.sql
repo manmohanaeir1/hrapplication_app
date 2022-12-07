@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 06:11 AM
+-- Generation Time: Dec 07, 2022 at 03:30 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `hrapplication_app`
+-- Database: `hrapplication_app1`
 --
 
 -- --------------------------------------------------------
@@ -56,10 +56,10 @@ CREATE TABLE `hr_departments` (
 --
 
 INSERT INTO `hr_departments` (`dept_id`, `dept_name`) VALUES
-(14, 'IT'),
-(15, 'Engineering'),
-(16, 'Administration'),
-(17, 'Marketing');
+(18, 'Administration'),
+(19, 'Marketing'),
+(20, 'Teaching'),
+(21, 'Engineering');
 
 -- --------------------------------------------------------
 
@@ -87,8 +87,7 @@ CREATE TABLE `hr_employees` (
 --
 
 INSERT INTO `hr_employees` (`per_id`, `per_firstname`, `per_lastname`, `per_email`, `per_salary`, `per_hire_data`, `per_phone`, `job_id`, `mgr_id`, `dept_id`, `status`, `user_name`) VALUES
-(12, 'Manmohan  ', 'Aeir  ', 'manmohanaeir012@gmail.com', 432111, '2022-12-03', 986591421, 2, 3, 15, 1, 'username'),
-(14, 'abc', 'xyz', 'abc@gmail.com', 3422, '2022-12-04', 2324567689, 1, 3, 15, 1, 'username');
+(23, 'test', 'test', 'test@gmail.com', 50000, '2022-12-06', 3456789, 8, 5, 20, 0, 'username');
 
 -- --------------------------------------------------------
 
@@ -109,11 +108,11 @@ CREATE TABLE `hr_jobs` (
 --
 
 INSERT INTO `hr_jobs` (`job_id`, `job_code`, `job_name`, `min_salary`, `max_salary`) VALUES
-(1, 'TCH', 'Teachers', 20000, 50000),
-(2, 'ENG', 'Engineering', 80000, 100000),
-(5, 'FI_ACCOUNT', 'ACCOUNTANT', 40000, 100000),
-(6, 'SA_REP', 'Sales Representative', 50000, 80000),
-(7, 'SDV', 'Software Developer', 50000, 70000);
+(8, 'TCH', 'Teachers', 20000, 50000),
+(9, 'ENG', 'Engineers', 50000, 80000),
+(10, 'FI_ACCOUNT', 'ACCOUNTANT', 80000, 90001),
+(11, 'SA_REP', 'Sales Representative', 40000, 50000),
+(12, 'SA_MAN', 'Sales Manager', 20000, 25000);
 
 -- --------------------------------------------------------
 
@@ -132,68 +131,8 @@ CREATE TABLE `hr_manager` (
 --
 
 INSERT INTO `hr_manager` (`mgr_id`, `first_name`, `last_name`) VALUES
-(3, 'Alexander ', 'Hunold'),
-(4, 'Nancy', 'Greenberg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_personnel`
---
-
-CREATE TABLE `tbl_personnel` (
-  `per_id` int(6) NOT NULL,
-  `per_firstname` char(20) NOT NULL,
-  `per_middlename` char(20) NOT NULL,
-  `per_lastname` char(20) NOT NULL,
-  `per_suffix` char(2) NOT NULL,
-  `pos_id` int(3) NOT NULL,
-  `per_gender` char(6) NOT NULL,
-  `per_status` char(8) NOT NULL,
-  `per_address` varchar(150) NOT NULL,
-  `per_date_of_birth` date NOT NULL,
-  `per_place_of_birth` varchar(150) NOT NULL,
-  `per_date_of_original_appointment` date NOT NULL,
-  `per_eligibility` varchar(20) NOT NULL,
-  `per_campus` char(14) NOT NULL,
-  `dept_id` int(3) NOT NULL,
-  `per_designation` varchar(50) NOT NULL,
-  `per_tin_no` varchar(20) NOT NULL,
-  `per_gsis_bp_no` varchar(15) NOT NULL,
-  `per_pagibig_no` varchar(14) NOT NULL,
-  `per_plantilla_no` int(25) NOT NULL,
-  `promote_id` int(5) NOT NULL,
-  `per_contact_no` varchar(20) NOT NULL,
-  `rank_id` int(3) NOT NULL,
-  `bs_name` varchar(50) NOT NULL,
-  `bs_year` year(4) NOT NULL,
-  `bs_school` varchar(50) NOT NULL,
-  `ms_name` varchar(50) NOT NULL,
-  `ms_with_unit` varchar(12) NOT NULL,
-  `ms_year` year(4) NOT NULL,
-  `ms_school` varchar(50) NOT NULL,
-  `dr_name` varchar(50) NOT NULL,
-  `dr_year` year(4) NOT NULL,
-  `dr_with_unit` varchar(12) NOT NULL,
-  `dr_school` varchar(50) NOT NULL,
-  `other_degree` varchar(50) NOT NULL,
-  `other_year` year(4) NOT NULL,
-  `other_school` varchar(50) NOT NULL,
-  `per_image` varchar(1000) NOT NULL,
-  `date_modified` date NOT NULL,
-  `gass_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_position`
---
-
-CREATE TABLE `tbl_position` (
-  `pos_id` int(3) NOT NULL,
-  `pos_name` char(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(5, 'Alexander ', 'Hunold'),
+(6, 'Nancy', 'Greenberg');
 
 -- --------------------------------------------------------
 
@@ -213,7 +152,7 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`user_id`, `user_name`, `email`, `password`) VALUES
-(5, 'username', 'user@gmail.com', 'password');
+(6, 'username', 'test@gmail.com', 'password');
 
 --
 -- Indexes for dumped tables
@@ -250,16 +189,11 @@ ALTER TABLE `hr_manager`
   ADD PRIMARY KEY (`mgr_id`);
 
 --
--- Indexes for table `tbl_personnel`
---
-ALTER TABLE `tbl_personnel`
-  ADD PRIMARY KEY (`per_id`);
-
---
 -- Indexes for table `user_login`
 --
 ALTER TABLE `user_login`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_name` (`user_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -275,37 +209,31 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `hr_departments`
 --
 ALTER TABLE `hr_departments`
-  MODIFY `dept_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `dept_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `hr_employees`
 --
 ALTER TABLE `hr_employees`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `hr_jobs`
 --
 ALTER TABLE `hr_jobs`
-  MODIFY `job_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `job_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `hr_manager`
 --
 ALTER TABLE `hr_manager`
-  MODIFY `mgr_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `tbl_personnel`
---
-ALTER TABLE `tbl_personnel`
-  MODIFY `per_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `mgr_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
