@@ -3,7 +3,7 @@ session_start();
 include('connect.php');
 if (isset($_POST['save'])) {
 	$per_salary = $_POST['per_salary'];
-	$qyery = $con->prepare("SELECT * FROM hr_jobs");
+	$qyery = $con->prepare("SELECT * FROM hr_jobs WHERE job_id = {$_POST['job_id']}");
 	$qyery->execute();
 	$row = $qyery->fetch();
 	$min_salary = $row['min_salary'];
