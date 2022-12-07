@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2022 at 03:30 AM
+-- Generation Time: Dec 07, 2022 at 05:02 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -56,10 +56,10 @@ CREATE TABLE `hr_departments` (
 --
 
 INSERT INTO `hr_departments` (`dept_id`, `dept_name`) VALUES
-(18, 'Administration'),
-(19, 'Marketing'),
-(20, 'Teaching'),
-(21, 'Engineering');
+(1, 'Administration'),
+(2, 'Marketing'),
+(3, 'Teaching'),
+(4, 'Engineering');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,8 @@ CREATE TABLE `hr_employees` (
 --
 
 INSERT INTO `hr_employees` (`per_id`, `per_firstname`, `per_lastname`, `per_email`, `per_salary`, `per_hire_data`, `per_phone`, `job_id`, `mgr_id`, `dept_id`, `status`, `user_name`) VALUES
-(23, 'test', 'test', 'test@gmail.com', 50000, '2022-12-06', 3456789, 8, 5, 20, 0, 'username');
+(1, 'test ', 'test ', 'test@gmail.com', 50000, '2022-12-06', 3456789, 1, 1, 3, 1, 'username'),
+(26, 'demo  ', 'de  ', 'demo@d.d', 29000, '2022-12-07', 7654, 5, 1, 2, 0, 'username');
 
 -- --------------------------------------------------------
 
@@ -108,11 +109,11 @@ CREATE TABLE `hr_jobs` (
 --
 
 INSERT INTO `hr_jobs` (`job_id`, `job_code`, `job_name`, `min_salary`, `max_salary`) VALUES
-(8, 'TCH', 'Teachers', 20000, 50000),
-(9, 'ENG', 'Engineers', 50000, 80000),
-(10, 'FI_ACCOUNT', 'ACCOUNTANT', 80000, 90001),
-(11, 'SA_REP', 'Sales Representative', 40000, 50000),
-(12, 'SA_MAN', 'Sales Manager', 20000, 25000);
+(1, 'TCH', 'Teachers', 20000, 50000),
+(2, 'ENG', 'Engineers', 50000, 80000),
+(3, 'FI_ACCOUNT', 'ACCOUNTANT', 80000, 90001),
+(4, 'SA_REP', 'Sales Representative', 40000, 50000),
+(5, 'SA_MAN', 'Sales Manager', 20000, 45000);
 
 -- --------------------------------------------------------
 
@@ -131,8 +132,8 @@ CREATE TABLE `hr_manager` (
 --
 
 INSERT INTO `hr_manager` (`mgr_id`, `first_name`, `last_name`) VALUES
-(5, 'Alexander ', 'Hunold'),
-(6, 'Nancy', 'Greenberg');
+(1, 'Alexander ', 'Hunold'),
+(2, 'Nancy', 'Greenberg');
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`user_id`, `user_name`, `email`, `password`) VALUES
-(6, 'username', 'test@gmail.com', 'password');
+(1, 'username', 'test@gmail.com', 'password');
 
 --
 -- Indexes for dumped tables
@@ -215,7 +216,7 @@ ALTER TABLE `hr_departments`
 -- AUTO_INCREMENT for table `hr_employees`
 --
 ALTER TABLE `hr_employees`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `hr_jobs`
