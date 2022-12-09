@@ -101,7 +101,7 @@ session_start();
                     </li>                   
                   
                 </ul><br><br><br>
-                <div class="dtime">
+             
                     <div class="alert alert-info">
                         <i class="icon-calendar"></i>
                         <?php

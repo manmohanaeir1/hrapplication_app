@@ -1,7 +1,7 @@
 <?php
 
 include('connect.php');
-$qyery = $con->prepare("SELECT * FROM hr_jobs");
+$qyery = $con->prepare("SELECT * FROM hr_jobs WHERE job_id = {$_POST['job_id']}");
 $qyery->execute();
 $row = $qyery->fetch();
 $min_salary = $row['min_salary'];
@@ -25,7 +25,6 @@ if (isset($_POST['save'])) {
 
 		$user_name = $_SESSION['user_name'];
 		$update = $con->prepare(" UPDATE hr_employees SET per_firstname= ?, per_lastname = ?, per_email=?,per_salary=?, per_phone=?, job_id=?, dept_id=?, mgr_id=?, user_name=?  WHERE per_id = ?");
-
 		$update->execute(array($per_firstname, $per_lastname, $per_email, $per_salary, $per_phone, $job_id, $dept_id, $mgr_id, $user_name, $per_id));
 		header('location:all_hr_application.php');
 	} else {
